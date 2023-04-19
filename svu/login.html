@@ -15,6 +15,41 @@
 <script type="text/javascript">
 function purpose_change()
 {
+
+
+
+	//start
+	var purpose_select = document.getElementById("purpose");
+	var selected_option = purpose_select.options[purpose_select.selectedIndex].text;
+	var form_group = document.getElementsByClassName("form-group col-xs-9")[0];
+	
+	if(selected_option === "01-Marks (Duplicate)") {
+	  document.getElementById("calculate_fee").value = "Calculate Fee: 500";
+	} else if(selected_option === "02-Marks (Triplicate)") {
+	  document.getElementById("calculate_fee").value = "Calculate Fee: 1000";
+	} else if(selected_option === "03-Provisional Certificate") {
+	  document.getElementById("calculate_fee").value = "Calculate Fee: 1500";
+	} else if(selected_option === "04-Provisional Certificate (Duplicate)") {
+	  document.getElementById("calculate_fee").value = "Calculate Fee: 2000";
+	} else if(selected_option === "05-Transcripts") {
+	  document.getElementById("calculate_fee").value = "Calculate Fee: 2500";
+	} else if(selected_option === "06-Original Degree") {
+	  document.getElementById("calculate_fee").value = "Calculate Fee: 3000";
+	} else if(selected_option === "07-Transfer Certificate") {
+	  document.getElementById("calculate_fee").value = "Calculate Fee: 3500";
+	} else if(selected_option === "08-Consolidated Marks Memo") {
+	  document.getElementById("calculate_fee").value = "Calculate Fee: 4000";
+	} else {
+	  document.getElementById("calculate_fee").value = "Calculate Fee";
+	}
+	
+	form_group.innerHTML = "<label class='control-label'>Selected Purpose:</label><p>" + selected_option + "</p>";
+  }
+
+  
+	//end
+
+
     if (document.getElementById("purpose").value == "Select Purpose"){
         document.getElementById("purposeErr").innerHTML = "Select Purpose !";
         document.getElementById("purpose_display").innerHTML="";
@@ -76,10 +111,14 @@ function purpose_change()
         xmlhttp.open("POST","online-apply-code.php?status=required_document_display&code-id1="+purpose_code);
         xmlhttp.send();
     }
-}
+
 
 function calculate_fee()
 {
+
+	if(document.getElementById("purpose")==="01"){
+		document.getElementById("calculate_fee").value.innerHTML="500"
+	}
     if (document.getElementById("purpose").value == "Select Purpose") {
         document.getElementById("purposeErr").innerHTML = "Select Purpose !";
         document.getElementById("purpose_display").innerHTML="";
@@ -482,14 +521,14 @@ document.onkeydown = function (e) {
 					<label class="control-label">Select Purpose</label>		
 					<select name="purpose" id="purpose" class="form-control select2" onchange="purpose_change();" style="width:100%">
 						<option value="">Select</option>
-						<option value=01>01-Marks (Duplicate)</option>
+						<option value=01 id="01">01-Marks (Duplicate)</option>
                         <option value=02>02-Marks (Triplicate)</option>
-                        <option value=03>03-Provisional Certificate</option>
-                        <option value=04>04-Provisional Certificate (Duplicate)</option>
-                        <option value=05>05-Transcripts</option>
-                        <option value=06>06-Original Degree</option>
-                        <option value=07>07-Transfer Certificate</option>
-                        <option value=08>08-Consolidated Marks Memo</option>
+                        <option value=03 >03-Provisional Certificate</option>
+                        <option value=04 >04-Provisional Certificate (Duplicate)</option>
+                        <option value=05 >05-Transcripts</option>
+                        <option value=06 >06-Original Degree</option>
+                        <option value=07 >07-Transfer Certificate</option>
+                        <option value=08 >08-Consolidated Marks Memo</option>
                     </select><span id="purposeErr" style="color: red;"></span>
 				</div>							
 				<div class="form-group col-xs-12">
