@@ -24,21 +24,21 @@ function purpose_change()
 	var form_group = document.getElementsByClassName("form-group col-xs-9")[0];
 	
 	if(selected_option === "01-Marks (Duplicate)") {
-	  document.getElementById("calculate_fee").value = "Calculate Fee: 500";
+	  document.getElementById("calculate_fee").value = "Calculate Fee: ₹500";
 	} else if(selected_option === "02-Marks (Triplicate)") {
-	  document.getElementById("calculate_fee").value = "Calculate Fee: 1000";
+	  document.getElementById("calculate_fee").value = "Calculate Fee: ₹1000";
 	} else if(selected_option === "03-Provisional Certificate") {
-	  document.getElementById("calculate_fee").value = "Calculate Fee: 1500";
+	  document.getElementById("calculate_fee").value = "Calculate Fee: ₹1500";
 	} else if(selected_option === "04-Provisional Certificate (Duplicate)") {
-	  document.getElementById("calculate_fee").value = "Calculate Fee: 2000";
+	  document.getElementById("calculate_fee").value = "Calculate Fee: ₹600";
 	} else if(selected_option === "05-Transcripts") {
-	  document.getElementById("calculate_fee").value = "Calculate Fee: 2500";
+	  document.getElementById("calculate_fee").value = "Calculate Fee: ₹1400";
 	} else if(selected_option === "06-Original Degree") {
-	  document.getElementById("calculate_fee").value = "Calculate Fee: 3000";
+	  document.getElementById("calculate_fee").value = "Calculate Fee: ₹1100";
 	} else if(selected_option === "07-Transfer Certificate") {
-	  document.getElementById("calculate_fee").value = "Calculate Fee: 3500";
+	  document.getElementById("calculate_fee").value = "Calculate Fee: ₹800";
 	} else if(selected_option === "08-Consolidated Marks Memo") {
-	  document.getElementById("calculate_fee").value = "Calculate Fee: 4000";
+	  document.getElementById("calculate_fee").value = "Calculate Fee: ₹900";
 	} else {
 	  document.getElementById("calculate_fee").value = "Calculate Fee";
 	}
@@ -440,6 +440,7 @@ background-color: rgb(82, 86, 89);
     padding: 4px 62px;
     box-sizing: border-box;
     width: 75%;
+	height: 900px;
     margin: 1% 12%;
     position: relative;
     border-radius: 4px;
@@ -739,8 +740,9 @@ document.onkeydown = function (e) {
 				</div>											
 			</div>					
 		</div>
+		<a href="pay_receipt.php" style="float:right; margin-top:20px;" class="btn btn-success">Pay and Proceed</a><br><br>
     </div><br> 
-	<a href="pay_receipt.php" style="float:right;" class="btn btn-success">Pay and Proceed</a><br><br>
+	
 </div>
 <script>
 $('.select2').select2();
